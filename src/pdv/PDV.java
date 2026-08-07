@@ -9,31 +9,70 @@ public class PDV {
 
 
 
-       
+        Gerente g1 = new Gerente(
+                1,
+                "Joao",
+                "9863542187",
+                7200f,
+                "Gerente",
+                "Administrativo",
+                1500f
+        );
 
-        Funcionario f1 = new Funcionario(1, "Joao", "11111111111", 2500f, "Gerente");
-        Funcionario f2 = new Funcionario(2, "Maria", "22222222222", 1800f, "Vendedora");
-        Funcionario f3 = new Funcionario(3, "Pedro", "33333333333", 2000f, "Estoquista");
-        Funcionario f4 = new Funcionario(4, "Ana", "44444444444", 2200f, "Supervisora");
-        Funcionario f5 = new Funcionario(5, "Carlos", "55555555555", 1700f, "Atendente");
 
-
-        loja.cadastrarFuncionario(f1);
-        loja.cadastrarFuncionario(f2);
-        loja.cadastrarFuncionario(f3);
-        loja.cadastrarFuncionario(f4);
-        loja.cadastrarFuncionario(f5);
+        loja.cadastrarFuncionario(g1);
 
 
 
+        Caixa c1 = new Caixa(
+                2,
+                "Lucas",
+                "548632019",
+                2250f,
+                "Caixa",
+                1
+        );
 
-      
 
-        Caixa c1 = new Caixa(1, "Lucas", "66666666666", 1900f, "Caixa");
-        Caixa c2 = new Caixa(2, "Julia", "77777777777", 1950f, "Caixa");
-        Caixa c3 = new Caixa(3, "Marcos", "88888888888", 2000f, "Caixa");
-        Caixa c4 = new Caixa(4, "Beatriz", "99999999999", 2100f, "Caixa");
-        Caixa c5 = new Caixa(5, "Rafael", "10101010101", 1850f, "Caixa");
+        Caixa c2 = new Caixa(
+                3,
+                "Julia",
+                "65874321589",
+                2250f,
+                "Caixa",
+                2
+        );
+
+
+        Caixa c3 = new Caixa(
+                4,
+                "Marcos",
+                "25634856479",
+                2250f,
+                "Caixa",
+                3
+        );
+
+
+        Caixa c4 = new Caixa(
+                5,
+                "Beatriz",
+                "2314587695",
+                2250f,
+                "Caixa",
+                4
+        );
+
+
+        Caixa c5 = new Caixa(
+                6,
+                "Rafael",
+                "658432103658",
+                2250f,
+                "Caixa",
+                5
+        );
+
 
 
         c1.abrirCaixa();
@@ -43,11 +82,13 @@ public class PDV {
         c5.abrirCaixa();
 
 
-        loja.cadastrarCaixa(c1);
-        loja.cadastrarCaixa(c2);
-        loja.cadastrarCaixa(c3);
-        loja.cadastrarCaixa(c4);
-        loja.cadastrarCaixa(c5);
+
+        loja.cadastrarFuncionario(c1);
+        loja.cadastrarFuncionario(c2);
+        loja.cadastrarFuncionario(c3);
+        loja.cadastrarFuncionario(c4);
+        loja.cadastrarFuncionario(c5);
+
 
 
         Menu menu = new Menu(loja);

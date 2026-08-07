@@ -24,17 +24,16 @@ public class Menu {
         int opcao = 0;
 
 
-        while(opcao != 7){
+        while(opcao != 6){
 
 
             System.out.println("\n========= MENU PDV =========");
-            System.out.println("1 - Cadastrar Funcionário");
+            System.out.println("1 - Cadastrar Gerente");
             System.out.println("2 - Cadastrar Caixa");
             System.out.println("3 - Realizar Pagamento");
             System.out.println("4 - Listar Funcionários");
-            System.out.println("5 - Listar Caixas");
-            System.out.println("6 - Listar Pagamentos");
-            System.out.println("7 - Sair");
+            System.out.println("5 - Listar Pagamentos");
+            System.out.println("6 - Sair");
 
 
             System.out.println("Escolha uma opção:");
@@ -48,13 +47,11 @@ public class Menu {
 
                 case 1:
 
-
-                    System.out.println("\n===== CADASTRO FUNCIONÁRIO =====");
+                    System.out.println("\n===== CADASTRO GERENTE =====");
 
 
                     System.out.println("Digite o id:");
                     int id = teclado.nextInt();
-
 
                     teclado.nextLine();
 
@@ -70,7 +67,6 @@ public class Menu {
                     System.out.println("Digite o salário:");
                     float salario = teclado.nextFloat();
 
-
                     teclado.nextLine();
 
 
@@ -78,17 +74,27 @@ public class Menu {
                     String cargo = teclado.nextLine();
 
 
+                    System.out.println("Digite o setor:");
+                    String setor = teclado.nextLine();
 
-                    Funcionario funcionario = new Funcionario(
+
+                    System.out.println("Digite o bônus:");
+                    float bonus = teclado.nextFloat();
+
+
+
+                    Gerente gerente = new Gerente(
                             id,
                             nome,
                             CPF,
                             salario,
-                            cargo
+                            cargo,
+                            setor,
+                            bonus
                     );
 
 
-                    loja.cadastrarFuncionario(funcionario);
+                    loja.cadastrarFuncionario(gerente);
 
 
                     break;
@@ -105,7 +111,6 @@ public class Menu {
                     System.out.println("Digite o id:");
                     int idCaixa = teclado.nextInt();
 
-
                     teclado.nextLine();
 
 
@@ -121,11 +126,8 @@ public class Menu {
                     float salarioCaixa = teclado.nextFloat();
 
 
-                    teclado.nextLine();
-
-
-                    System.out.println("Digite o cargo:");
-                    String cargoCaixa = teclado.nextLine();
+                    System.out.println("Digite o número do caixa:");
+                    int numeroCaixa = teclado.nextInt();
 
 
 
@@ -134,14 +136,13 @@ public class Menu {
                             nomeCaixa,
                             cpfCaixa,
                             salarioCaixa,
-                            cargoCaixa
+                            "Caixa",
+                            numeroCaixa
                     );
 
 
-                    caixa.abrirCaixa();
 
-
-                    loja.cadastrarCaixa(caixa);
+                    loja.cadastrarFuncionario(caixa);
 
 
                     break;
@@ -156,7 +157,7 @@ public class Menu {
 
 
                     System.out.println("Número do pagamento:");
-                    float numero = teclado.nextFloat();
+                    int numeroPagamento = teclado.nextInt();
 
 
                     System.out.println("Valor da venda:");
@@ -172,7 +173,7 @@ public class Menu {
 
 
                     Pagamento pagamento = new Pagamento(
-                            numero,
+                            numeroPagamento,
                             valor,
                             modalidade
                     );
@@ -203,17 +204,6 @@ public class Menu {
                 case 5:
 
 
-                    loja.listarCaixas();
-
-
-                    break;
-
-
-
-
-                case 6:
-
-
                     loja.listarPagamentos();
 
 
@@ -222,7 +212,7 @@ public class Menu {
 
 
 
-                case 7:
+                case 6:
 
 
                     System.out.println("Sistema encerrado!");
@@ -245,6 +235,5 @@ public class Menu {
 
 
     }
-
 
 }

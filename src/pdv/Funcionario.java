@@ -1,6 +1,6 @@
 package pdv;
 
-public class Funcionario {
+public abstract class Funcionario {
 
     private int id;
     private String nome;
@@ -22,51 +22,61 @@ public class Funcionario {
 
     public void mostrarDados(){
 
-        System.out.println("id: " + id);
-        System.out.println("nome: " + nome);
+        System.out.println("ID: " + id);
+        System.out.println("Nome: " + nome);
         System.out.println("CPF: " + CPF);
-        System.out.println("salario: " + salario);
-        System.out.println("cargo: " + cargo);
+        System.out.println("Salário: " + salario);
+        System.out.println("Cargo: " + cargo);
 
     }
+
 
 
     public int getId() {
         return id;
     }
 
+
     public String getNome() {
         return nome;
     }
+
 
     public String getCPF() {
         return CPF;
     }
 
+
     public float getSalario() {
         return salario;
     }
+
 
     public String getCargo() {
         return cargo;
     }
 
 
+
     public void setId(int id) {
         this.id = id;
     }
+
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
+
     public void setSalario(float salario) {
         this.salario = salario;
     }
+
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
